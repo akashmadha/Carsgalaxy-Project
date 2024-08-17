@@ -1,0 +1,110 @@
+// Typography
+$base-font-family: 'Lato', sans-serif;
+$header-font-family: 'Montserrat', sans-serif;
+
+// Font Sizes
+$small-font-size: em(16);
+$base-font-size: em(17); 
+$medium-font-size: em(28);
+$large-font-size: em(32);
+$xlarge-font-size: em(36);
+$display-font-size: em(42);
+$heading5-font-size: em(24);
+$heading6-font-size: em(20);
+
+
+// Line height
+$baseline:em(8); //Old habits die hard
+$base-line:em(8);
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+// Other Sizes
+$base-border-radius: 0;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+
+// Colors
+$white:#ffffff;
+$black:#000000;
+$blue: #477DCA;
+$green:#e60012;
+$dark-green: #841620;
+$gray:#999;
+$dark-gray: #333333;
+$medium-gray: #58595b;
+$light-gray: #eeeeee;
+$red: #e60012;
+$gray2: #191919;
+$yellow: #ffcc00;
+
+// Base Colors
+$base-color:$green;
+$base-accent-color:$green;
+$base-font-color: $dark-gray;
+$base-background-color: white;
+
+
+// Link Colors
+$base-link-color: $dark-gray;
+$hover-link-color: darken($base-link-color, 15);
+
+// Border color
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;
+
+
+// Navigation Default/Desktop
+$nav-font-size:em(17);
+$nav-height:em(60);
+$nav-background:$white;
+$nav-text-color:$dark-gray;
+$nav-text-color-hover:$gray2;
+$nav-hover:#e4e4e5;
+$nav-border:1px solid rgba(24,32,42,0.10);
+$nav-spacing:$baseline;
+$nav-subnav-font-size:em(17);
+$nav-subnav-height:em(50);
+$nav-subnav-background:$nav-hover;
+$nav-subnav-border:1px solid rgba(24,32,42,0.10);
+$nav-subnav-hover:$green;
+
+// Navigation Medium/Tablet
+$nav-font-size-medium:$nav-font-size;
+$nav-height-medium:$nav-height;
+$nav-background-medium:$nav-background;
+$nav-text-color-medium:$nav-text-color;
+$nav-text-color-hover-medium:$nav-text-color-hover;
+$nav-hover-medium:$nav-hover;
+$nav-border-medium:$nav-border;
+$nav-spacing-medium:$nav-spacing;
+$nav-subnav-font-size-medium:$nav-subnav-font-size;
+$nav-subnav-height-medium:$nav-subnav-height;
+$nav-subnav-background-medium:$nav-subnav-background;
+$nav-subnav-border-medium:$nav-subnav-border;
+$nav-subnav-hover-medium:$nav-subnav-hover;
+
+// Navigation Small/Mobile
+$nav-font-size-mobile:$nav-font-size;
+$nav-height-mobile:$nav-height; $nav-width-mobile:100%;
+$nav-background-mobile:$nav-background;
+$nav-text-color-mobile:$nav-text-color;
+$nav-text-color-hover-mobile:$nav-text-color-hover;
+$nav-hover-mobile:$nav-hover;
+$nav-border-mobile:$nav-border;
+$nav-spacing-mobile:$baseline*2;
+$nav-subnav-font-size-mobile:$nav-subnav-font-size;
+$nav-subnav-height-mobile:$nav-subnav-height;
+$nav-subnav-background-mobile:$nav-subnav-background;
+$nav-subnav-border-mobile:$nav-subnav-border;
+$nav-subnav-hover-mobile:$nav-subnav-hover;

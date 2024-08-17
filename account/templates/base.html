@@ -1,0 +1,45 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <title>HOME Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'js/vendor/modernizr.min.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="base">
+  {% if user.is_authenticated %}
+      {% include 'header.html' %}
+  {% endif %}
+  
+  {% block body %}
+      {% if user.is_authenticated %}
+          <!-- Add authenticated user content here -->
+      {% else %}
+          {% include 'login.html' %}
+      {% endif %}
+  {% endblock %}
+  
+  {% if user.is_authenticated %}
+      {% include 'footer.html' %}
+  {% endif %}
+</div>
+</body>
+</html>
+

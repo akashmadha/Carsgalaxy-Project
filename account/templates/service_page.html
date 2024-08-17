@@ -1,0 +1,187 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <title>HOME Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'js/vendor/modernizr.min.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* General container styling */
+    .content-container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /* Filter container styling */
+    .filter-container {
+        width: 30%;
+    float: right;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .filter-container input[type="date"],
+    .filter-container input[type="text"] {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .filter-container button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        font-size: 16px;
+    }
+
+    .filter-container button:hover {
+        background-color: #000;
+    }
+
+    /* Table container styling */
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Table styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4a4a4a;
+        color: white;
+        font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    /* No data message styling */
+    .no-data {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin: 20px 0;
+    }
+    /* Specific styling for the email column */
+    td.email {
+        max-width: 150px; /* Adjust this value as needed */
+        word-wrap: break-word;
+    }
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        th, td {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .filter-container input[type="date"],
+        .filter-container button {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        th, td {
+            padding: 6px;
+            font-size: 12px;
+        }
+
+        .filter-container input[type="date"],
+        .filter-container button {
+            font-size: 12px;
+            padding: 8px;
+        }
+    }
+</style>
+</head>
+<body>
+ {% include "header_nav_only.html" %}
+<div class="content-container">
+     <!-- Filter Form -->
+     <div class="filter-container">
+        <form method="get" action="{% url 'income:filter' %}">
+            {% csrf_token %}
+            <input type="date" name="start_date" required>
+            <input type="date" name="end_date" required>
+            <button type="Submit">Filter</button>
+        </form>
+    </div>
+
+    <!-- Customer Table -->
+    <div class="table-container">
+        {% if ser %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Customer Name</th>
+                    <th>Customer Fullname</th>
+                    <th>Date</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in ser %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.Customer_name }}</td>
+                    <td>{{ i.Customer_fullname }}</td>
+                    <td>{{ i.Date }}</td>
+                    <td>{{ i.Contact }}</td>
+                    <td class="email">{{ i.Email }}</td>
+                    <td>{{ i.Description }}</td>
+                    <td>{{ i.Address }}</td>
+                    <td><a href="Ser_delete/{{ i.id }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="no-data">No customers found for the selected date range.</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <title>HOME Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'js/vendor/modernizr.min.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<!-- Header -->
+   <header class="site-header" role="banner">
+    <div class="sh-sticky-wrap">
+        <div class="inner-wrap">
+            <div class="sh-utility-nav-wrap clearfix">
+                <div class="shnw-utility-nav">
+                    <span class="shnw-ph-wrap"><a href="tel:0000000000" class="sh-ph" aria-label="Phone Number"><span>000.000.0000</span></a></span>
+                    <span class="shnw-email-wrap"><a href="mailto:info@hiwin.com" class="sh-email" aria-label="Email"><span>Email</span></a></span>
+                    <span class="shnw-search-wrap"><a class="sh-ico-search search-link" target="_blank" href="#" aria-label="Search Icon"><span>Search</span></a></span>
+                </div>
+            </div>
+            <div class="sh-top-nav-wrap clearfix">  
+              <a href="patterns.html" class="site-logo" aria-label="Hiwin Corporation"><img src="static/img/car-logo.jpg" alt="Umar Nisar Automobiles" title="Umar Nisar Automobiles"><span>Cars Galaxy</span></a>      
+      <div class="site-nav-container">
+        <div class="snc-header">
+          <a href="#" class="close-menu menu-link" aria-label="Close Menu">Close</a>
+        </div>
+        <nav class="site-nav" role="navigation">
+           
+          <ul class="sn-level-1">  
+            <li class="sn-li-l1 menu-item-has-children">
+              <a href="/"><span>Home</span></a>
+              <ul class="sn-level-2 sub-menu">
+              </ul>
+            </li>
+            
+            <li class="sn-li-l1 menu-item-has-children">
+              <a href="#"><span>Category</span></a>
+              <ul class="sn-level-2 sub-menu">
+                <li class="sn-li-l2">
+                  <a href="{% url 'income:bmw' %}"><span>BMW</span></a>
+                </li>
+                <li class="sn-li-l2">
+                  <a href="{% url 'income:m_ben' %}"><span>Mercedes-Benz</span></a>
+                </li>
+                <li class="sn-li-l2">
+                  <a href="{% url 'income:ghine' %}"><span>Lamborghini</span></a>
+                </li>
+                <li class="sn-li-l2">
+                  <a href="{% url 'income:porsche' %}"><span>Porsche</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="sn-li-l1 menu-item-has-children">
+              <a href="#"><span>Contact Us</span></a>
+            </li>
+            <li class="sn-li-l1">
+              <a href="#"><span>Services</span></a>
+              <ul class="sn-level-2 sub-menu">
+                <li class="sn-li-l2">
+                  <a href="{% url 'income:service' %}"><span>Book Your Service</span></a>
+                </li>
+                <li class="sn-li-l2">
+                  <a href="#"><span>Service details</span></a>
+                </li>
+              </ul>
+            </li>
+           
+            <li class="sn-li-l1 menu-item-has-children">
+                <a href="#"><span>Sign In</span></a>
+                <ul class="sn-level-2 sub-menu">
+                  <li class="sn-li-l2">
+                    <a href="{% url 'account:login' %}"><span>Login</span></a>
+                  </li>
+                  <li class="sn-li-l2">
+                    <a href="{% url 'account:logout' %}"><span>Logout</span></a>
+                  </li>
+                </ul>
+              </li> 
+              <li class="sn-li-l1 rfq">
+                <a href="{% url 'account:reg' %}"><span>Book Now</span></a>
+              </li>
+                      
+          </ul>
+        </nav>
+      </div>
+            </div>
+        </div>
+    </div>
+    <div class="sh-utility-nav-moblie">
+        <span class="sh-icons"><a href="#menu" class="sh-ico-menu menu-link" aria-label="Menu Icon"><span>Menu</span></a></span>
+        <span><a href="mailto:info@test.com" class="sh-email" aria-label="Email Address"><span>Email</span></a></span>
+        <span><a href="Mob:0000000000" class="sh-ph" aria-label="Phone Number"><span>Phone</span></a></span>
+        <span><a class="sh-ico-search search-link" target="_blank" href="#" aria-label="Search Icon"><span>Search</span></a></span>
+        <span><a href="" class="rfq-cta btn">Book Now</a></span>
+    </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .si-item img{
+        width: 1400px;
+        height: 350px;
+        object-fit: cover;
+      }
+      {% comment %} .car_b {
+        background:#33383c;
+    } {% endcomment %}
+    </style>
+</head>
+<body>
+<!-- Site Search -->
+<div class="search-module">
+    <div class="inner-wrap">
+      <form action="{% url 'income:search' %}" method="get" class="search-form">
+        <div class="search-table">
+          <div class="search-row">
+            <div class="search-cell1">
+              <input type="text" id="search-site" value="" placeholder="Search Website..." name="q" class="search-text" title="Search Website..." tabindex="-1" aria-label="Search Website...">
+            </div>
+            <div class="search-cell2">
+              <input class="search-submit" alt="Search" title="Search" value="" type="submit" tabindex="-1" aria-label="Search">
+            </div>
+            <div class="search-cell3">
+              <a href="javascript:void(0)" target="_blank" class="search-link search-exit active" tabindex="-1" aria-label="Close Search Module"><img src="static/img/ico-exit.svg" alt="Exit"></a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+       <!-- Header -->
+       <header class="site-header" role="banner">
+        <div class="sh-sticky-wrap">
+            <div class="inner-wrap">
+                <div class="sh-utility-nav-wrap clearfix">
+                    
+                    <div class="shnw-utility-nav">
+                        <span class="shnw-ph-wrap"><a href="tel:0000000000" class="sh-ph" aria-label="Phone Number"><span>000.000.0000</span></a></span>
+                        <span class="shnw-email-wrap"><a href="mailto:info@hiwin.com" class="sh-email" aria-label="Email"><span>Email</span></a></span>
+                        <span class="shnw-search-wrap"><a class="sh-ico-search search-link" target="_blank" href="#" aria-label="Search Icon"><span>Search</span></a></span>
+                    </div>
+                </div>
+                <div class="sh-top-nav-wrap clearfix">
+                                <!--Site Nav-->
+                                <a href="patterns.html" class="site-logo" aria-label="Hiwin Corporation"><img src="static/img/car-logo.jpg" alt="Umar Nisar Automobiles" title="Umar Nisar Automobiles"><span>Cars Galaxy</span></a>
+          <div class="site-nav-container">
+            <div class="snc-header">
+              <a href="#" class="close-menu menu-link" aria-label="Close Menu">Close</a>
+            </div>
+            <nav class="site-nav" role="navigation">
+              <ul class="sn-level-1">
+                
+                <li class="sn-li-l1 menu-item-has-children">
+                  <a href="{% url 'account:home' %}"><span>Home</span></a>
+                  <ul class="sn-level-2 sub-menu">
+                  </ul>
+                </li>
+                <li class="sn-li-l1 menu-item-has-children">
+                  <a href="#"><span>Category</span></a>
+                  <ul class="sn-level-2 sub-menu">
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:bmw' %}"><span>BMW</span></a>
+                    </li>
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:m_ben' %}"><span>Mercedes-Benz</span></a>
+                    </li>
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:ghine' %}"><span>Lamborghini</span></a>
+                    </li>
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:porsche' %}"><span>Porsche</span></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="sn-li-l1 menu-item-has-children">
+                  <a href="#"><span>Contact Us</span></a>
+                </li>
+                <li class="sn-li-l1">
+                  <a href="#"><span>Servics</span></a>
+                  <ul class="sn-level-2 sub-menu">
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:service' %}"><span>Book Your Service</span></a>
+                    </li>
+                    <li class="sn-li-l2">
+                      <a href="{% url 'income:details'%}"><span>Service details</span></a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sn-li-l1 menu-item-has-children">
+                    <a href="#"><span>Sign In</span></a>
+                    <ul class="sn-level-2 sub-menu">
+                      <li class="sn-li-l2">
+                        <a href="{% url 'account:login' %}"><span>Login</span></a>
+                      </li>
+                      <li class="sn-li-l2">
+                        <a href="{% url 'account:logout' %}"><span>Logout</span></a>
+                      </li>
+                    </ul>
+                  </li> 
+                  <li class="sn-li-l1 car_b">
+                    <a href="{% url 'account:reg' %}"><span>Registration</span></a>
+                  </li>               
+              </ul>
+            </nav>
+          </div><!-- site-nav-container END-->
+                </div>
+            </div>
+        </div>
+        <section class="site-content" role="main">
+          <div class="site-header-wrap">
+             <!-- Site Intro Starts -->
+             <section class="site-intro">
+                  <div class="si-slider">
+                      <div class="si-item"><img src="static/img/img-2.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-2.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-3.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-4.WEBP" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-5.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-6.jpg" alt=""></div>
+                  </div>
+             </section>
+        <div class="sh-utility-nav-moblie">
+            <span class="sh-icons"><a href="#menu" class="sh-ico-menu menu-link" aria-label="Menu Icon"><span>Menu</span></a></span>
+            <span><a href="mailto:info@test.com" class="sh-email" aria-label="Email Address"><span>Email</span></a></span>
+            <span><a href="Mob:0000000000" class="sh-ph" aria-label="Phone Number"><span>Phone</span></a></span>
+            <span><a class="sh-ico-search search-link" target="_blank" href="#" aria-label="Search Icon"><span>Search</span></a></span>
+            <span><a href="" class="rfq-cta btn">Book Now</a></span>
+        </div>
+    </header>
+</div>
+</body>
+</html> 

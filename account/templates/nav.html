@@ -1,0 +1,127 @@
+
+{% extends "base.html" %}
+{% block body %}
+<a href="" class="site-nav-container-screen menu-link">&nbsp;</a>
+    <section class="site-content" role="main">
+      <!--Product module start-->
+      <section class="aum-wrap">
+        <div class="inner-wrap"><h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </section>
+    <!-- Box model -->
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="static/img/bmw-8.JPEG" alt="">
+                    <h3>BMW</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
+                    <a href="{% url 'income:bmw' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="static/img/mlimg/mer-3.JPEG" alt="">
+                    <h3>Mercedes-Benz</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
+                    <a href="{% url 'income:m_ben' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="static/img/mlimg/lam-3.JPEG" alt="">
+                    <h3>Lamborghini</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
+                    <a href="{% url 'income:ghine' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+          <div class="face face1">
+              <div class="content">
+                  <img src="static/img/por-4.JPEG" alt="">
+                  <h3>Porsche</h3>
+              </div>
+          </div>
+          <div class="face face2">
+              <div class="content">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
+                  <a href="{% url 'income:porsche' %}">Read More</a>
+              </div>
+          </div>
+      </div>
+        <!-- Repeat card elements as needed -->
+    </div>
+    <!-- Box model end -->
+
+ <!--Key Industries module end-->
+ <section class="clients-module">
+    <span class="cl-bg">Customer</span>
+    <div class="inner-wrap">
+      <div class="clm-wrap">
+      <h2 class="clm-header">Customer Testimonials</h2>
+      <div class="cm-slider">
+        <div class="clm-item">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <p class="cmi-designation">Managing Director</p>
+          <p class="cmi-company-name">Name</p>
+        </div>
+        <div class="clm-item">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <p class="cmi-designation">Managing Director</p>
+          <p class="cmi-company-name">Name</p>
+        </div>
+        <div class="clm-item">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <p class="cmi-designation">Managing Director</p>
+          <p class="cmi-company-name">Name</p>
+        </div>
+
+    </div>  
+  </div>
+</div>
+  </section>    
+    <!--Key Industries module start-->
+    <section class="key-industries-module" style="background-image: url(static/img/homesli/ace-01.JPEG);">
+        <div class="kim-image-bg">
+          <div class="kim-bg1" style="background-image: url(static/img/seat_cover_01.jpg);"></div>
+          <div class="kim-bg2" style="background-image: url(static/img/str_01.jpg);"></div>
+          <div class="kim-bg3" style="background-image: url(static/img/handle_01.jpg);"></div>
+          <div class="kim-bg4" style="background-image: url(static/img/flore_mat.jpg);"></div>
+        </div>
+        <div class="inner-wrap">
+          <div class="kim-content-wrap">
+          <h2 class="kim-header">Parts & Accessories</h2>
+          <ul class="kim-link">
+            <li><a href="#" rel="kim-bg1">SEAT COVERS</a></li>
+            <li><a href="#" rel="kim-bg2">STEERING WHEEL</a></li>
+            <li><a href="#" rel="kim-bg3">HANDLE GRIPS</a></li>
+            <li><a href="#" rel="kim-bg4">FLOOR MATS</a></li>
+          </ul>
+          <a href="#" class="kim-cta btn-alt">View All Parts & Accessories</a>
+          </div>
+        </div>
+      </section>
+   
+      <!--Key Industries module end-->
+      <!--Key Industries module end-->
+{% include "cars_slider.html" %}
+
+{% endblock  %}
