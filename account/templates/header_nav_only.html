@@ -23,6 +23,27 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+  <!-- Site Search -->
+<div class="search-module">
+  <div class="inner-wrap">
+    <form action="{% url 'income:search' %}" method="get" class="search-form">
+     
+      <div class="search-table">
+        <div class="search-row">
+          <div class="search-cell1">
+            <input type="text" id="search-site" value="" placeholder="Search Website..." name="q" class="search-text" title="Search Website..." tabindex="-1" aria-label="Search Website...">
+          </div>
+          <div class="search-cell2">
+            <input class="search-submit" alt="Search" title="Search" value="" type="submit" tabindex="-1" aria-label="Search">
+          </div>
+          <div class="search-cell3">
+            <a href="javascript:void(0)" target="_blank" class="search-link search-exit active" tabindex="-1" aria-label="Close Search Module"><img src="static/img/ico-exit.svg" alt="Exit"></a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 <!-- Header -->
    <header class="site-header" role="banner">
     <div class="sh-sticky-wrap">
@@ -67,7 +88,7 @@
               </ul>
             </li>
             <li class="sn-li-l1 menu-item-has-children">
-              <a href="#"><span>Contact Us</span></a>
+              <a href="{%url 'income:contact'%}"><span>Contact Us</span></a>
             </li>
             <li class="sn-li-l1">
               <a href="#"><span>Services</span></a>
@@ -76,7 +97,7 @@
                   <a href="{% url 'income:service' %}"><span>Book Your Service</span></a>
                 </li>
                 <li class="sn-li-l2">
-                  <a href="#"><span>Service details</span></a>
+                  <a href="{% url 'income:details'%}"><span>Service details</span></a>
                 </li>
               </ul>
             </li>
@@ -93,7 +114,7 @@
                 </ul>
               </li> 
               <li class="sn-li-l1 rfq">
-                <a href="{% url 'account:reg' %}"><span>Book Now</span></a>
+                <a href="{% url 'income:book' %}"><span>Book Now</span></a>
               </li>
                       
           </ul>

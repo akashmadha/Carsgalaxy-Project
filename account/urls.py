@@ -22,21 +22,12 @@ from .import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',v.home,name='home'),
-    path('registration',v.add_user,name='reg'),
+    # path('registration',v.add_user,name='reg'),
+    path('registration',v.register,name='reg'),
+    
     path('login/',v.loginform,name='login'),
     path('logout/',v.logout_v,name='logout'),
-    #  path('forgot_password/', v.forgot_password, name='forgot_password'),
-
-    # path('password_reset/', 
-    #      auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html'), 
-    #      name='password_reset'),
-    # path('password_reset/done/', 
-    #  auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), 
-    #  name='password_reset_done'),
-    # path('reset/<uidb64>/<token>/', 
-    #      auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_email.html'), 
-    #      name='password_reset_email'),
-    # path('reset/done/', 
-    #      auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), 
-    #      name='password_reset_complete'),
+    path('forgotPassword/',v.forgotPassword,name='forgotPassword'),  
+    path('restpassword_validate/<uidb64>/<token>/',v.restpassword_validate,name='restpassword'),  
+    path('resetpassword',v.resetpassword,name='resetpassword'),
 ]

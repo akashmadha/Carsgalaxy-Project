@@ -99,10 +99,10 @@
                 <input type="hidden" name="car_id" value="{{ pl.id }}">
                 
                 <label for="Your_name">Your Name:</label>
-                <input type="text" name="Your_name">
+                <input type="text" name="Your_name" required>
 
                 <label for="Your_fullname">Full Name:</label>
-                <input type="text" name="Your_fullname" >
+                <input type="text" name="Your_fullname" required>
 
                 <label for="Contact">Contact:</label>
                 <input type="text" name="Contact" required>
@@ -114,9 +114,7 @@
                 <input type="text" name="Address">
 
 
-                <button type="submit">Add to Bookings</button>
-                <button type="submit">Submit Quote</button>
-                
+                <button type="submit">Submit Booking</button>
             </form>
         </div>
     </div>

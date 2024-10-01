@@ -83,7 +83,7 @@
                   </ul>
                 </li>
                 <li class="sn-li-l1 menu-item-has-children">
-                  <a href="#"><span>Contact Us</span></a>
+                  <a href="{%url 'income:contact'%}"><span>Contact Us</span></a>
                 </li>
                 <li class="sn-li-l1">
                   <a href="#"><span>Servics</span></a>
@@ -94,7 +94,11 @@
                     <li class="sn-li-l2">
                       <a href="{% url 'income:details'%}"><span>Service details</span></a>
                     </li>
+                  
                   </ul>
+                  <li class="sn-li-l1 menu-item-has-children">
+                    <a href="{% url 'account:reg'%}"><span>Registration</span></a>
+                  </li>
                 </li>
 
                 <li class="sn-li-l1 menu-item-has-children">
@@ -109,7 +113,7 @@
                     </ul>
                   </li> 
                   <li class="sn-li-l1 car_b">
-                    <a href="{% url 'account:reg' %}"><span>Registration</span></a>
+                    <a href="{% url 'income:book' %}"><span>Book</span></a>
                   </li>               
               </ul>
             </nav>
@@ -122,10 +126,10 @@
              <!-- Site Intro Starts -->
              <section class="site-intro">
                   <div class="si-slider">
-                      <div class="si-item"><img src="static/img/img-2.jpg" alt=""></div>
-                      <div class="si-item"><img src="static/img/img-2.jpg" alt=""></div>
-                      <div class="si-item"><img src="static/img/img-3.jpg" alt=""></div>
-                      <div class="si-item"><img src="static/img/img-4.WEBP" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-1.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-6.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-5.jpg" alt=""></div>
+                      <div class="si-item"><img src="static/img/img-1.jpg" alt=""></div>
                       <div class="si-item"><img src="static/img/img-5.jpg" alt=""></div>
                       <div class="si-item"><img src="static/img/img-6.jpg" alt=""></div>
                   </div>

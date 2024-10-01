@@ -28,11 +28,11 @@
        <!-- Site Intro Starts -->
        <section class="site-intro">
             <div class="si-slider">
-                <div class="si-item"><img src="static/img/homesli/sli-8.JPEG" alt=""></div>
+                <div class="si-item"><img src="static/img/homesli/sli-5.JPEG" alt=""></div>
                 <div class="si-item"><img src="static/img/homesli/sli-9.JPEG" alt=""></div>
                 <div class="si-item"><img src="static/img/homesli/sli-3.JPEG" alt=""></div>
                 <div class="si-item"><img src="static/img/homesli/sli-4.JPEG" alt=""></div>
-                <div class="si-item"><img src="static/img/homesli/sli-5.JPEG" alt=""></div>
+                <div class="si-item"><img src="static/img/homesli/sli-8.JPEG" alt=""></div>
                 <div class="si-item"><img src="static/img/homesli/sli-6.JPEG" alt=""></div>
             </div>
        </section>
@@ -102,7 +102,7 @@
                     <a href="#"><span>Sign In</span></a>
                     <ul class="sn-level-2 sub-menu">
                       <li class="sn-li-l2">
-                        <a href="{% url 'account:login' %}"><span>Login</span></a>
+                        {% comment %} <a href="{% url 'account:login' %}"><span>Login</span></a> {% endcomment %}
                       </li>
                       <li class="sn-li-l2">
                         <a href="{% url 'account:logout' %}"><span>Logout</span></a>

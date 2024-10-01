@@ -1487,7 +1487,7 @@ input[type="submit"] {
     .hs-menu-children-wrapper {
       position: absolute;
       z-index: 11;
-      min-width: 22.0625em;
+      min-width: 18.75em;
       top: 100%;
       left: 0;
       text-align: left; }

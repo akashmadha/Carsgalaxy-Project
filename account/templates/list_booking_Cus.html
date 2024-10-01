@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked Cars</title>
+    <style>
+        /* Layout styling */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .car-list {
+            flex: 1;
+            max-width: 300px;
+            margin-right: 20px;
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+        .car-item {
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-size: 14px; /* Smaller text size */
+        }
+        .car-item:hover {
+            background-color: #737373;
+        }
+        .car-details {
+            flex: 2;
+            padding: 20px;
+            border: 1px solid #ccc;
+            min-height: 200px;
+            background-color: #fff;
+            font-size: 14px; /* Smaller text size */
+        }
+        .car-img img {
+            max-width: 320px; /* Smaller image size */
+            height: auto;
+        }
+        .pay-amount {
+    display: inline-block;
+    background-color: #6c757d; /* Gray background color */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px; /* Padding inside the div */
+    text-align: center; /* Center the text inside the div */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.pay-amount a {
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.pay-amount:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+.pay-amount:active {
+    background-color: #545b62; /* Even darker gray when the div is clicked */
+}
+
+.pay-amount a:hover {
+    color: #ffffff; /* Ensure the text remains white on hover */
+}
+
+    </style>
+</head>
+<body>
+    <h1>Cars Galaxy</h1>
+
+    <div class="container">
+        <!-- Left Side: List of Cars -->
+        <div class="car-list">
+            {% for i in li %}
+            <div class="car-item" data-img="{{ i.img }}" data-name="{{ i.Your_name }}" data-fullname="{{ i.Your_fullname }}" data-contact="{{ i.Contact }}" data-email="{{ i.Email }}" data-address="{{ i.Address }}" data-date="{{ i.Date }}">
+                <h3>{{ i.Your_name }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Right Side: Car Details -->
+        <div class="car-details">
+            <div class="car-img">
+                <img id="car-img" src="" alt="">
+            </div>
+            <h2 id="car-name">Select a car to view details</h2>
+            <p><strong>Full Name:</strong> <span id="car-fullname"></span></p>
+            <p><strong>Contact:</strong> <span id="car-contact"></span></p>
+            <p><strong>Email:</strong> <span id="car-email"></span></p>
+            <p><strong>Address:</strong> <span id="car-address"></span></p>
+            <p><strong>Date:</strong> <span id="car-date"></span></p>
+            
+            <div class="pay-amount">
+                <a href="{% url 'income:fill_form' %}">pay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.car-item').on('click', function() {
+                // Get data from the clicked item
+                var imgSrc = "static/img/" + $(this).data('img');
+                var name = $(this).data('name');
+                var fullname = $(this).data('fullname');
+                var contact = $(this).data('contact');
+                var email = $(this).data('email');
+                var address = $(this).data('address');
+                var date = $(this).data('date');
+
+                // Update the details section with the clicked car data
+                $('#car-img').attr('src', imgSrc);
+                $('#car-name').text(name);
+                $('#car-fullname').text(fullname);
+                $('#car-contact').text(contact);
+                $('#car-email').text(email);
+                $('#car-address').text(address);
+                $('#car-date').text(date);
+            });
+        });
+    </script>
+</body>
+</html>

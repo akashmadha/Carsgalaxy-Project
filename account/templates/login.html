@@ -1,16 +1,16 @@
-
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <link rel="stylesheet" href="{% static 'css/exp.css' %}">
     
     <style>
         .all_cover{
             font-family: Arial, sans-serif;
-             background-image: linear-gradient(444deg, rgba(77, 77, 77,0.05) 0%, rgba(77, 77, 77,0.05) 25%,rgba(42, 42, 42,0.05) 25%, rgba(42, 42, 42,0.05) 38%,rgba(223, 223, 223,0.05) 38%, rgba(223, 223, 223,0.05) 75%,rgba(36, 36, 36,0.05) 75%, rgba(36, 36, 36,0.05) 100%),linear-gradient(272deg, rgba(128, 128, 128,0.05) 0%, rgba(128, 128, 128,0.05) 34%,rgba(212, 212, 212,0.05) 34%, rgba(212, 212, 212,0.05) 57%,rgba(25, 25, 25,0.05) 57%, rgba(25, 25, 25,0.05) 89%,rgba(135, 135, 135,0.05) 89%, rgba(135, 135, 135,0.05) 100%),linear-gradient(469deg, rgba(55, 55, 55,0.05) 0%, rgba(55, 55, 55,0.05) 14%,rgba(209, 209, 209,0.05) 14%, rgba(209, 209, 209,0.05) 60%,rgba(245, 245, 245,0.05) 60%, rgba(245, 245, 245,0.05) 69%,rgba(164, 164, 164,0.05) 69%, rgba(164, 164, 164,0.05) 100%),linear-gradient(477deg, rgba(248, 248, 248,0.05) 0%, rgba(248, 248, 248,0.05) 32%,rgba(148, 148, 148,0.05) 32%, rgba(148, 148, 148,0.05) 35%,rgba(202, 202, 202,0.05) 35%, rgba(202, 202, 202,0.05) 51%,rgba(181, 181, 181,0.05) 51%, rgba(181, 181, 181,0.05) 100%),linear-gradient(320deg, hsl(214,0%,11%),hsl(214,0%,11%));;
+            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,7 +18,7 @@
             margin: 0;
         }
         .container {
-            background-color: #fff;
+           border:none !important;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,7 +80,6 @@
 }
 
 .car_img {
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,12 +140,42 @@ form button:hover {
 }
 .login{
     width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
 }
 
+.forgot-password a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.forgot-password a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+#explore-button{
+    width: 100%;
+    background-color: #00356e !important;
+}
+table td{
+    color:white;
+}
+.animated-text p{
+    color:white !important;
+}
+#main1{
+    margin-top: -2px;
+}
     </style>
 </head>
 <body>
- <section class="all_cover">
+    
+ <section class="all_cover" id="main">
+    
     <div class="container">
         <div class="car_img">
             <div class="si-item"><img src="/static/img/img-3.jpg" alt=""></div>
@@ -176,18 +205,113 @@ form button:hover {
                     </tr>
                 </div>
                 <tr>
-                    <td colspan=""><input type="submit" value="Login" class="login"></td>
-                     <a href="{% url 'account:reg' %}"><span>password_reset</span></a> 
-
+                    <td colspan="2">
+                        <input type="submit" value="Login" class="login">
+                        <button id="explore-button">Explore</button>
+                    </td>
                 </tr>
             </table>
         </form>
-        
+        <div class="forgot-password">
+            <a href="{% url 'account:forgotPassword' %}">Forgot Password?</a>
+            <a href="{% url 'account:reg' %}">Register</a>
         </div>
     </div>
 </section>
+<section>
+  
+        <section class="cars_add" id="main1">
+            <div class="imge_info">
+                <div class="cantier_of_Images_Text">
+                   
+                    <h1>Maybach X
+                        <br>
+                        David LaChapelle.
+                    </h1>
+                    <div class="img_contaner">
+                        <img class="brandhub-picture" src="/static/img/homesli/lmod-3.JPEG" alt="">
+                    </div>
+                </div>
+                
+                <div class="Details">
+                    <div class="animated-text">
+                    <p>This image showcases a Porsche 911 GT3 RS with a striking custom livery featuring a wave
+                        design <br>inspired by Japanese art. The car's sleek profile is complemented by bold text in
+                        the background, <br>emphasizing its powerful and artistic appeal</p>
+                    </div>
+                        <button class="btn">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                        <span>Read More</span>
+                    </button>
+                </div>
+            </div>
+            <div class="imge_info2" id="content-section">
+                <div class="cantier_of_Images_Text">
+                    <p>Art</p>
+                    <h1>Maybach X
+                        <br>
+                        David LaChapelle.
+                    </h1>
+                    <div class="img_contaner">
+                        <img class="brandhub-picture" src="/static/img/homesli/lmod-1.JPEG" alt="">
+                    </div>
+                </div>
+                <div class="Details">
+                    <div class="animated-text">
+                    <p>This image showcases a Porsche 911 GT3 RS with a striking custom livery featuring a wave
+                        design <br>inspired by Japanese art. The car's sleek profile is complemented by bold text in
+                        the background, <br>emphasizing its powerful and artistic appeal</p>
+                        <button class="btn">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                        
+                        <span id="explore-button" >Read More</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+</section>
+<div class="video-slider">
+    <!-- Video slides go here -->
+    <video src="./4569076-hd_1920_1080_30fps.mp4" autoplay muted loop id="video-container"></video>
+    <video
+        src="https://maserati.scene7.com/is/content/maserati/maserati/international/Models/grancabrio/2024/hero-video-loop/Maserati_GranCabrio_OdeToJoy_Video_16x9_v2.mp4"
+        id="video-container" autoplay muted loop></video>
+    <video
+        src="https://maserati.scene7.com/is/content/maserati/maserati/folgore-assets/folgore-new/hero/Hero_Folgore-1920x1080.mp4"
+        id="video-container" autoplay muted loop></video>
+    <video
+        src="https://maserati.scene7.com/is/content/maserati/maserati/international/Models/my25/gt2-stradale/gt2-hero-video-preview-desktop.mp4"
+        id="video-container" autoplay muted loop></video>
 
+    <!--navigatiob Bar-->
+    <button id="prev-btn" class="nav-btn">&ll;</button>
+    <button id="next-btn" class="nav-btn">&gg;</button>
+    <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
 
+</div> 
+<div class="car-showcase">
+    <div class="car-image">
+        <img src="" alt="Car Image">
+    </div>
+    <div class="car-info">
+        <h1 id="car-name"></h1>
+        <p id="car-description"></p>
+        <a id="read-more" href="#" class="read-more">Read More</a>
+    </div>
+
+</div> 
+<div> 
+
+<script src="./exporervideo.js"></script>
+<!-- <script src="./textAnimation.js"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -215,5 +339,187 @@ form button:hover {
             });
         });
     </script>
+    <script> 
+
+    // Array of car objects with name, description, image, and read more properties
+const cars = [
+    {
+        name: "Lamborghini",
+        description: "The Lamborghini Revuelto, captured in its stunning new design, showcases a revolutionary hybrid powertrain that blends luxury with performance. Its bold lines and aggressive stance reflect Lamborghini's commitment to unparalleled driving excitement and cutting-edge technology.",
+        image: "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2024/08_02_rev_opera_unica/rev_opera_unica_cover.jpg",
+        readMore: "Read More >>"
+    },
+    {
+        name: "Ferrari",
+        description: "The Ferrari 812 Competizione A epitomizes the pinnacle of performance and elegance, with a design that commands attention. Its powerful V12 engine and aerodynamic refinement deliver an exhilarating driving experience, blending raw power with refined sophistication.",
+        image: "https://ferrari-cdn.thron.com/delivery/public/thumbnail/ferrari/671c2c41-210a-4abb-8739-eab0512615a5/bocxuw/std/592x359/812-competizione-a-exterior",
+        readMore: "Read More >>"
+    },
+    {
+        name: "Lamborghini Revuelto",
+        description: "The Lamborghini Revuelto is a groundbreaking supercar that combines cutting-edge hybrid technology with striking design. Its powerful V12 engine and advanced aerodynamics deliver unparalleled performance and a thrilling driving experience.",
+        image: "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/motorsport/news/2024/08_02_orlebar/orlebar_cover.jpg",
+        readMore: "Read More >>"
+    }
+];
+
+
+// Select all video elements in the slider
+let videos = document.querySelectorAll('.video-slider video');
+
+// Select the car image and text elements
+let carImage = document.querySelector('.car-image img');
+let carInfo = document.querySelector('.car-info');
+// let videoTextOverlay = document.getElementById('video-text');
+let readMore = document.getElementById('read-more');
+
+// Initialize the current index to 0
+let currentIndex = 0;
+
+// Function to update the video slide, car details, and text overlay
+function changeSlide(index) {
+    currentIndex = index;
+
+    // Update video visibility
+    videos.forEach((video, i) => {
+        video.classList.remove('active');
+        if (i === currentIndex) {
+            video.classList.add('active');
+        }
+    });
+
+    // Update car details based on the current video
+    let currentCar = cars[currentIndex];
+    carImage.src = currentCar.image;
+    carImage.classList.add('active');
+    carInfo.querySelector('#car-name').textContent = currentCar.name;
+    carInfo.querySelector('#car-description').textContent = currentCar.description;
+    carInfo.classList.add('active');
+    
+    // // Update video text overlay
+    // videoTextOverlay.textContent = videoTexts[currentIndex];
+    // videoTextOverlay.classList.add('active');
+    
+    // Update "Read More" box text
+    readMore.textContent = currentCar.readMore;
+    readMore.href = `#`;  // You can set this to a URL if needed
+    readMore.classList.add('active');
+}
+
+// Function to go to the next slide
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % videos.length;
+    changeSlide(currentIndex);
+}
+
+// Function to go to the previous slide
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+    changeSlide(currentIndex);
+}
+
+// Attach event listeners to the navigation buttons
+document.getElementById('next-btn').addEventListener('click', nextSlide);
+document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+// Automatically change the slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Initial setup to display the first slide, car details, and video text
+changeSlide(currentIndex);
+
+// Initial animation setup
+window.addEventListener('load', () => {
+    document.querySelector('.car-showcase').classList.add('active');
+    carImage.classList.add('active');
+    carInfo.classList.add('active');
+    // videoTextOverlay.classList.add('active');
+    readMore.classList.add('active');
+
+    const video = document.getElementById('video-container');
+const progressBar = document.getElementById('progress-bar');
+
+video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100;
+    progressBar.style.height = `${percentage}%`;
+});
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const animatedTexts = document.querySelectorAll('.animated-text');
+
+    animatedTexts.forEach((animatedText, index) => {
+        const text = animatedText.querySelector('p');
+        const words = text.innerText.split(' ');
+
+        text.innerHTML = words.map((word, wordIndex) => `<span style="--word-index: ${wordIndex}">${word}</span>`).join(' ');
+
+        // Calculate the delay in seconds (index * 5 seconds)
+        const delay = index * 10;
+
+        // Add a delay to the animation
+        animatedText.style.animationDelay = `${delay}s`;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animatedText.classList.add('active');
+                    observer.unobserve(animatedText);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(animatedText);
+    });
+});
+document.getElementById('explore-button').addEventListener('click', function() {
+    document.getElementById('content-section').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('content-section').addEventListener('click', function() {
+    document.getElementById('explore-button').scrollIntoView({ behavior: 'smooth' });
+});
+
+</script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+        
+    VANTA.NET({
+        el: "#main",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x8d8fcf,
+        backgroundColor: 0x0,
+        points: 20.00,
+        maxDistance: 22.00,
+        spacing: 18.00
+      })
+   
+</script>
+<script>
+        
+    VANTA.NET({
+        el: "#main1",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x8d8fcf,
+        backgroundColor: 0x0,
+        points: 30.00,
+        maxDistance: 30.00,
+        spacing: 21.00
+      })
+   
+</script>
 </body>
 </html>
