@@ -1,84 +1,244 @@
-<footer class="section mf-footer">
-  <div class="mf-container">
-      <div class="mf-row">
-        <div class="tack-center">
-          <div class="mf-col-lg-1">
-              <div class="">
-                  <h6 class="text-hover-effect">Information</h6>
-                  <ul class="list-unstyled footer-link mt-4">
-                      <li><a href="">Pages</a></li>
-                      <li><a href="">Our Team</a></li>
-                      <li><a href="">Feuchers</a></li>
-                      <li><a href="">Pricing</a></li>
-                  </ul>
-              </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* Footer Styling */
+.mf-footer {
+    background-color: #333333; /* Dark Gray Background */
+    color: #ffffff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    overflow: hidden;
+}
 
-          <div class="mf-col-lg-2">
-              <div class="">
-                  <h6 class="text-hover-effect">Ressources</h6>
-                  <ul class="list-unstyled footer-link mt-4">
-                      <li><a href="">Monitoring Grader </a></li>
-                      <li><a href="">Video Tutorial</a></li>
-                      <li><a href="">Term &amp; Service</a></li>
-                      <li><a href="">Zeeko API</a></li>
-                  </ul>
-              </div>
-          </div>
+/* Footer Container */
+.mf-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-          <div class="mf-col-lg-3">
-              <div class="">
-                  <h6 class="text-hover-effect">Help</h6>
-                  <ul class="list-unstyled footer-link mt-4">
-                      <li><a href="">Sign Up </a></li>
-                      <li><a href="">Login</a></li>
-                      <li><a href="">Terms of Services</a></li>
-                      <li><a href="">Privacy Policy</a></li>
-                  </ul>
-              </div>
-          </div>
-        </div>
-          <div class="mf-col-lg-4">
-            <form  action="https://formspree.io/f/xwpeboja"
-            method="POST">
-                <h2 class="text-hover-effect">Contact Me!</h2>
-                <div class="fs-container">
-                    <div class="fs-name fs-input">
-                        <input type="text" placeholder="Full Name" id="fullname" name="fullname" class="item" autocomplete="off" required>
-                        <input type="tel" placeholder="Phone Number" id="phone" name="phone" class="item" pattern="[0-9]{10}" autocomplete="off" required>
-                    </div>
-                    <div class="fs-email fs-input">
-                        <input type="email" placeholder="Email Address" id="email" name="email" class="item" autocomplete="off" required>
-                    </div>
-                   
-                    <div class="fs-sub fs-input">
-                        <input type="text" placeholder="Subject" id="subject" name="subject" class="item" autocomplete="off" required>
-                    </div>
-                    <div class="fs-tex fs-input">
-                        <textarea id="message" name="message" cols="30" rows="10" placeholder="Your message" class="tex" autocomplete="off" required></textarea>
+/* Footer Row - Flexbox Layout */
+.mf-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Footer Columns */
+.mf-col-lg-1, 
+.mf-col-lg-2, 
+.mf-col-lg-3, 
+.mf-col-lg-4 {
+    flex: 1;
+   
+}
+
+/* Footer Headings */
+h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Golden Color */
+}
+
+h6:hover {
+    color: #ffdd44;
+    transition: 0.3s ease-in-out;
+}
+
+/* Footer Links */
+.footer-link {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link li {
+    margin-bottom: 10px;
+}
+
+.footer-link li a {
+    color: #ddd; /* Light Gray Text */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+    display: block;
+}
+
+.footer-link li a:hover {
+    color: #ffcc00;
+}
+
+/* Contact Form */
+.fs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fs-input input,
+.fs-input textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #444;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.fs-input input::placeholder,
+.fs-input textarea::placeholder {
+    color: #bbb;
+}
+
+button {
+    background: #ffcc00;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #e6b800;
+}
+
+/* Footer Bottom */
+.text-center {
+    text-align: center;
+    padding: 20px 0;
+    background: #222;
+    width: 100%;
+}
+
+.footer-alt {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mf-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mf-col-lg-1, 
+    .mf-col-lg-2, 
+    .mf-col-lg-3, 
+    .mf-col-lg-4 {
+        max-width: 100%;
+    }
+
+    .fs-container {
+        text-align: center;
+    }
+    .mf-row tack-cen{
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+<body>
+    <footer class="section mf-footer">
+        <div class="mf-container">
+            <div class="mf-row">
+              <div class="tack-cen">
+                <div class="mf-col-lg-1">
+                    <div class="">
+                        <h6 class="text-hover-effect">🚗 Cars Quick Links</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/">About Us</a></li>
+                            <li><a href="/">Cars Collection</a></li>
+                            <li><a href="">Book a Test Drive</a></li>
+                        </ul>
                     </div>
                 </div>
-                <button type="submit">Send</button>
-            </form>
+      
+                <div class="mf-col-lg-2">
+                    <div class="">
+                        <h6 class="text-hover-effect">Contact Us</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="">📍 Location: Thane City, Country, Maharashtra </a></li>
+                            <li><a href="">📞 Phone: +91 7039361508</a></li>
+                            <li><a href="">📧 Email: akashmadha321@gmail.com</a></li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+      
+                <div class="mf-col-lg-3">
+                    <div class="">
+                        <h6 class="text-hover-effect">Help</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="">Book your Services</a></li>
+                            <li><a href="">Logout</a></li>
+                            <li><a href="">Service details</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+                <div class="mf-col-lg-4">
+                  <form  action="https://formspree.io/f/xwpeboja"
+                  method="POST">
+                      <h2 class="text-hover-effect">Contact Me!</h2>
+                      <div class="fs-container">
+                          <div class="fs-name fs-input">
+                              <input type="text" placeholder="Full Name" id="fullname" name="fullname" class="item" autocomplete="off" required>
+                              <input type="tel" placeholder="Phone Number" id="phone" name="phone" class="item" pattern="[0-9]{10}" autocomplete="off" required>
+                          </div>
+                          <div class="fs-email fs-input">
+                              <input type="email" placeholder="Email Address" id="email" name="email" class="item" autocomplete="off" required>
+                          </div>
+                         
+                          <div class="fs-sub fs-input">
+                              <input type="text" placeholder="Subject" id="subject" name="subject" class="item" autocomplete="off" required>
+                          </div>
+                          <div class="fs-tex fs-input">
+                              <textarea id="message" name="message" cols="30" rows="10" placeholder="Your message" class="tex" autocomplete="off" required></textarea>
+                          </div>
+                      </div>
+                      <button type="submit">Send</button>
+                  </form>
+              </div>
+              
+      
+            </div>
         </div>
-        
-
-      </div>
-  </div>
-
-  <div class="text-center mt-5">
-      <p class="footer-alt mb-0 f-14">2019 © Anup, All Rights Reserved</p>
-  </div>
-</footer>
-
-</div><!--site-wrap END -->
-
-
-<!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js?ver=1.10.2'></script> -->
-<script src="/static/js/vendor/jquery-1.10.2.min.js"></script>
-<script src="/static/js/production.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-
+      
+        <div class="text-center mt-5">
+            <p class="footer-alt mb-0 f-14">2024 © Akash, All Rights Reserved</p>
+        </div>
+      </footer>
+      
+      </div><!--site-wrap END -->
+      
+      
+      <!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js?ver=1.10.2'></script> -->
+      <script src="/static/js/vendor/jquery-1.10.2.min.js"></script>
+      <script src="/static/js/production.min.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      
+      </body>
+      
+      </html>
+       
 </body>
-
 </html>

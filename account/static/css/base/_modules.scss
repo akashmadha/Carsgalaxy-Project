@@ -3187,67 +3187,6 @@ button[type="submit"]:hover {
 }
 
 
-.mf-row{
-  .tack-center{
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 63%;
-   
-    @include mq(small){
-      display: block;
-      margin: 0 auto;
-        text-align: center;
-        padding: 0;
-    }
-  }
-}
 
 
 
-/* Footer Section Styles */
-.text-hover-effect {
-  position: relative;
-  display: inline-block;
-  color: #ff5722;
-}
-
-.text-hover-effect::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  
-  left: 0;
-  background-color: #fff;
-  visibility: hidden;
-  transition: all 0.5s ease-in-out;
-}
-
-.text-hover-effect:hover::after {
-  visibility: visible;
-  width: 100%;
-}
-
-.tack-center{
- 
-  ul{
-    @include mq(small){
-      width: 40%;
-    margin: 0 auto;
-
-    }
-  
-  }
-}
-
-.container .card .face.face1 .content img {
-  max-width: 35vh !important;
-}
-
-.product-module{
-  margin-bottom: 2em;
-  box-shadow: 0 3px 16px 10px #333;
-}

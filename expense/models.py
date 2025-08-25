@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 
 class chousejender(models.Model):
     TITLE_CHOICES = [
-        ('Mr', 'Mr'),
-        ('Miss', 'Miss'),
+        ('Male', 'Male'),
+        ('Female', 'Female'),
         ('Other', 'Other'),
     ]
 

@@ -1,0 +1,7 @@
+<form method="POST" action="{% url 'income:create_order' %}">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" required>
+    <button type="submit">Pay</button>
+  </form>
+  

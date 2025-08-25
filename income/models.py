@@ -80,6 +80,14 @@ class PorModel(models.Model):
         db_table='Porcar'
 
 
+class PayMent(models.Model):
+   name = models.CharField(max_length=100)
+   amount = models.CharField(max_length=100)
+   payment_id = models.CharField(max_length=100)
+   paid = models.BooleanField(default=False)
+
+   class Meta:
+        db_table='PayMent_list'
 
 
 class BookCars(models.Model):
@@ -90,7 +98,11 @@ class BookCars(models.Model):
     Email = models.CharField(max_length=100)
     Address = models.CharField(max_length=100, default='Address')
     img=models.ImageField(upload_to='image',default='')
+    payment = models.OneToOneField(PayMent, on_delete=models.SET_NULL, null=True, blank=True)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
 
     class Meta:
         db_table='booklist'
+
+
+

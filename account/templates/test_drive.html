@@ -39,23 +39,22 @@
         button:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 <body>
     {% extends 'base2.html' %}
     {% block body %}
 <div class="form-container">
-   
-    <form action="" method="post">
+   <form action="" method="post" class="test_form">
         {% csrf_token %}
         <table border="2">
-            <tr>
+            <tr class="form_con">
                 {{ form.as_table }}
             </tr>
         </table>
         <button type="submit">Submit</button>
-    </form>
-    
+    </form>  
 </div>
 {% endblock %}
 

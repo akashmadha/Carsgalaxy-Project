@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, MerModel, lamModel, PorModel, BmwModel
+from .models import Category, MerModel, lamModel, PorModel, BmwModel,PayMent
 
 # Define your admin classes with search fields
 class CategoryAdmin(admin.ModelAdmin):
@@ -22,6 +22,11 @@ class BmwModelAdmin(admin.ModelAdmin):
     list_display = ['model_name', 'model_price', 'description', 'category', 'img']
     search_fields = ['model_name', 'model_price', 'description', 'category__category_name']
 
+
+class PayMentAdmin(admin.ModelAdmin):
+    list_display = ['name', 'amount', 'payment_id', 'paid']
+    search_fields = ['Name']
+
 # class BookCarsAdmin(admin.ModelAdmin):
 #     list_display = ['Your_name', 'Your_fullname', 'Date', 'Contact', 'Email' , 'Address', 'user']
 #     search_fields = ['Your_name', 'Your_fullname', 'Date', 'Contact', 'Email' , 'Address']
@@ -32,4 +37,5 @@ admin.site.register(MerModel, MerModelAdmin)
 admin.site.register(lamModel, LamModelAdmin)
 admin.site.register(PorModel, PorModelAdmin)
 admin.site.register(BmwModel, BmwModelAdmin)
+admin.site.register(PayMent, PayMentAdmin)
 # admin.site.register(BookCars, BookCarsAdmin)

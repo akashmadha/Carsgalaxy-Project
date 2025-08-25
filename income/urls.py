@@ -31,12 +31,22 @@ urlpatterns = [
     path('Ser_delete/<int:pk>',v.Ser_delete.as_view()),
     path('contact',v.contact_page,name='contact'),
     path('book',v.book_cars,name='book'),
+
+    # path('mercedes/',v.mercedes_cars, name='book'),
+    # path('lamborghini/',v.lamborghini_cars, name='book'),
+    # path('porsche/',v.porsche_cars, name='book'),
+    # path('bmw/',v.bmw_cars, name='bookcar'),
+
     path('All_cars',v.all_cars,name='all'),
     path('Sports_cars',v.Sports_cars,name='sports'),
     path('comfort_cars',v.comfort_cars,name='comfort'),
     path('luxury_cars',v.luxury_cars,name='luxury'),
     path('bookcars',v.bookform,name='bookcar'),
+    path('list_booking_Cus',v.list_booking_Cus,name='list_booking_Cus'),
+    # path('bookcarsbmw',v.bookformbmw,name='bookcarbmw'),
     
-    
+    path('create-order/',v.create_order, name='create_order'),
+    path('fill_form/',v.fill_form, name='fill_form'),
+    path('verify-payment/',v.verify_payment, name='verify_payment'),
         
 ]

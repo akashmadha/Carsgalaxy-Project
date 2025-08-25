@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+       
+        .body_content{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .marquee{
+            background-color: #f4f4f4;
+            margin-bottom: -4px;
+            font-size: 25px;
+        }
+        .pay {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .pay label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .pay input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .pay a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .pay a:hover {
+            background-color: #218838;
+           
+
+        }
+    </style>
+</head>
+<body>
+    <marquee class="marquee" behavior="scroll" direction="left" scrollamount="6">
+        This is the amount of the car booking amount.
+    </marquee>
+    <section class="body_content">
+    <div class="pay">
+        <form id="payment-form">
+            <label for="name">Enter your name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="amount">Enter Amount (INR)</label>
+            <input type="text" id="amount" name="amount" required>
+
+            <a href="#" id="pay-now">Pay Now</a>
+        </form>
+    </div>
+</section>
+
+    <!-- Razorpay Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById('pay-now').onclick = function(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('name').value.trim();
+            var amountInput = document.getElementById('amount').value.trim();
+
+            // Validate the amount input
+            var amount = parseFloat(amountInput);
+            if (isNaN(amount) || amount < 100) {
+                alert("Please enter a valid amount of at least 100 INR.");
+                return;
+            }
+
+            // Convert amount to paise (1 INR = 100 paise)
+            var amountInPaise = Math.round(amount * 2000);
+
+            var options = {
+                "key": "rzp_test_fUM1KpcBRriccx", // Replace with your Razorpay key ID
+                "amount": amountInPaise, // Amount in paise
+                "currency": "INR",
+                "name": "Cars Galaxy",
+                "description": "Payment for Car Booking",
+                "image": "/static/img/car-logo.jpg", // Replace with your logo URL
+                "handler": function(response) {
+                    alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": name,
+                    "email": "customer@example.com" // Replace with the customer's email if available
+                },
+                "theme": {
+                    "color": "#28a745"
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        };
+    </script>
+</body>
+</html>
